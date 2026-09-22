@@ -40,7 +40,7 @@ export default function App() {
       <Header onOpenLegal={setLegalModalType} />
 
       <main>
-        <Hero />
+        <Hero onSelectProduct={setSelectedProduct} />
         <AboutSection />
         <TherapeuticAreas onSelectCategory={setActiveCategory} />
         <ProductCatalogue 

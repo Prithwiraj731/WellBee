@@ -440,13 +440,16 @@ body {
 }
 
 /* ==========================================================================
-   Hero Section
+   Hero Section - Premium Pharma Glassmorphic Aesthetic
    ========================================================================== */
 .hero-section {
-  background-color: #FAFCFF;
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 100% 0%, rgba(26, 86, 219, 0.07) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.05) 0px, transparent 50%);
   border-bottom: 1px solid var(--color-slate-200);
-  padding-top: 64px;
-  padding-bottom: 74px;
+  padding-top: 68px;
+  padding-bottom: 80px;
   position: relative;
   overflow: hidden;
 }
@@ -455,64 +458,139 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(#CBD5E1 1px, transparent 1px);
+  background-image: radial-gradient(rgba(203, 213, 225, 0.8) 1px, transparent 1px);
   background-size: 32px 32px;
-  opacity: 0.45;
+  opacity: 0.5;
   pointer-events: none;
+}
+
+/* Ambient luminous glow orbs */
+.hero-glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-glow-blob--top {
+  top: -100px;
+  right: -50px;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(26, 86, 219, 0.12) 0%, rgba(2, 132, 199, 0.04) 60%, transparent 80%);
+}
+
+.hero-glow-blob--bottom {
+  bottom: -150px;
+  left: 20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 70%);
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
   gap: 48px;
   align-items: center;
   position: relative;
   z-index: 1;
 }
 
+.hero-content,
+.hero-showcase-container {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Badge with pulsing radar beacon */
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-family: var(--font-heading);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--color-brand-deep);
-  background: #EFF6FF;
-  padding: 5px 12px;
+  background: rgba(239, 246, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
   border-radius: var(--radius-pill);
-  border: 1px solid #DBEAFE;
-  margin-bottom: 18px;
+  border: 1px solid #BFDBFE;
+  box-shadow: 0 2px 6px rgba(26, 86, 219, 0.06);
+  margin-bottom: 20px;
+  max-width: 100%;
 }
 
-.hero-badge__dot {
-  width: 7px;
-  height: 7px;
-  background: var(--color-brand-primary);
+.hero-badge__pulse {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-brand-primary);
   border-radius: 50%;
+  position: relative;
+  z-index: 2;
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background-color: rgba(26, 86, 219, 0.4);
+  animation: beaconPulse 2.2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes beaconPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
 }
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(34px, 4vw, 46px);
+  font-size: clamp(32px, 3.8vw, 46px);
   font-weight: 800;
   color: var(--color-brand-dark);
   line-height: 1.18;
   letter-spacing: -0.03em;
   margin-bottom: 18px;
+  word-break: break-word;
 }
 
 .hero-title__highlight {
-  color: var(--color-brand-primary);
+  background: linear-gradient(135deg, #1A56DB 0%, #0284C7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline;
 }
 
 .hero-desc {
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.62;
   color: var(--color-slate-600);
-  max-width: 540px;
-  margin-bottom: 30px;
+  max-width: 520px;
+  margin-bottom: 32px;
+  font-weight: 450;
 }
 
 .hero-ctas {
@@ -520,154 +598,373 @@ body {
   align-items: center;
   gap: 14px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 }
 
-.hero-metrics {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-slate-200);
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
 }
 
-.metric-item {
+.hero-cta-btn .cta-arrow {
+  transition: transform var(--transition-fast);
+}
+
+.hero-cta-btn:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Minimalist Glass Metrics Strip */
+.hero-metrics-bar {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-md);
+  padding: 14px 20px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+.metric-cell {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
-  border: 1px solid var(--color-slate-200);
-  border-radius: var(--radius-sm);
-  padding: 10px 12px;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
 }
 
-.metric-number {
+.metric-cell__value {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--color-brand-dark);
-  line-height: 1;
-  margin-bottom: 4px;
+  line-height: 1.2;
+  margin-bottom: 2px;
 }
 
-.metric-label {
+.metric-cell__label {
   font-size: 11px;
   color: var(--color-slate-500);
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.35;
 }
 
-/* Clinical Specification Visual Card */
-.pharma-card-preview {
-  background: var(--color-white);
-  border: 1px solid var(--color-slate-200);
+.metric-cell-sep {
+  width: 1px;
+  height: 32px;
+  background-color: var(--color-slate-200);
+  margin: 0 16px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Hero Showcase - Living Flagship Molecule Deck
+   ========================================================================== */
+.hero-showcase-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating Micro Glass Pills */
+.floating-glass-pill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-pill);
+  padding: 7px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--color-brand-dark);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.floating-glass-pill.pill--top {
+  top: -16px;
+  right: 18px;
+}
+
+.floating-glass-pill.pill--bottom {
+  bottom: -16px;
+  left: 20px;
+}
+
+.text-brand-blue {
+  color: var(--color-brand-primary);
+}
+
+.text-emerald-600 {
+  color: #059669;
+}
+
+/* Main Pharma Glass Deck */
+.pharma-glass-deck {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(219, 234, 254, 0.85);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: 
+    0 24px 48px -12px rgba(15, 23, 42, 0.09),
+    0 4px 12px rgba(26, 86, 219, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
   overflow: hidden;
+  position: relative;
 }
 
-.pharma-card-preview__header {
-  background: #F8FAFC;
-  padding: 14px 18px;
+/* Tabs Header */
+.deck-tabs-header {
+  background: #F1F5F9;
+  padding: 8px 10px;
   border-bottom: 1px solid var(--color-slate-200);
+}
+
+.deck-tabs-scroll {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.deck-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.deck-tab-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-slate-600);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.deck-tab-pill:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--color-brand-dark);
+}
+
+.deck-tab-pill.active {
+  background: var(--color-white);
+  color: var(--color-brand-primary);
+  border-color: #DBEAFE;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+  font-weight: 700;
+}
+
+.deck-tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-slate-300);
+  transition: background-color var(--transition-fast);
+}
+
+.deck-tab-pill.active .deck-tab-dot {
+  background-color: var(--color-brand-primary);
+}
+
+/* Status Bar */
+.deck-status-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 18px;
+  background: #F8FAFC;
+  border-bottom: 1px solid var(--color-slate-200);
 }
 
-.batch-no {
+.status-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.live-ping {
+  width: 7px;
+  height: 7px;
+  background-color: var(--color-success);
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(22, 163, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
+  }
+}
+
+.status-live-text {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 9.5px;
+  font-weight: 700;
   color: var(--color-slate-500);
-  font-weight: 600;
-  margin-top: 2px;
+  letter-spacing: 0.06em;
 }
 
-.pharma-card-preview__body {
-  padding: 22px 18px;
+.category-pill-tag {
+  font-family: var(--font-heading);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--color-brand-deep);
+  background: #EFF6FF;
+  padding: 2px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid #BFDBFE;
 }
 
-.lead-formulation {
+/* Deck Body */
+.deck-body {
+  padding: 20px 20px 18px;
+}
+
+.deck-product-hero {
   margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 1px dashed var(--color-slate-200);
 }
 
-.lead-formulation__cat {
+.deck-audience-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   font-family: var(--font-mono);
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-brand-primary);
-  display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
-.lead-formulation__name {
+.deck-product-name {
   font-family: var(--font-heading);
-  font-size: 19px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--color-brand-dark);
-  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+  margin-bottom: 5px;
 }
 
-.lead-formulation__spec {
+.deck-product-composition {
   font-size: 12.5px;
+  line-height: 1.45;
   color: var(--color-slate-600);
 }
 
-.spec-matrix {
-  background: var(--color-slate-50);
+/* 4 Specs Micro-Cards */
+.deck-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.deck-spec-card {
+  background: #F8FAFC;
   border: 1px solid var(--color-slate-200);
   border-radius: var(--radius-sm);
-  padding: 10px 12px;
+  padding: 9px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-card-title {
+  font-size: 10.5px;
+  color: var(--color-slate-500);
+  font-weight: 500;
+}
+
+.spec-card-value {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-slate-800);
+  line-height: 1.3;
+}
+
+.spec-card-value--highlight {
+  color: #059669;
+  font-weight: 700;
+}
+
+/* Checkpoints */
+.deck-checkpoints {
   display: flex;
   flex-direction: column;
   gap: 6px;
   margin-bottom: 16px;
 }
 
-.spec-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-}
-
-.spec-name {
-  color: var(--color-slate-500);
-}
-
-.spec-val {
-  font-weight: 600;
-  color: var(--color-slate-800);
-}
-
-.text-success {
-  color: var(--color-success) !important;
-}
-
-.clinical-checkpoints {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.checkpoint {
+.deck-check-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--color-slate-700);
 }
 
-.pharma-card-preview__footer {
-  background: #F8FAFC;
-  padding: 12px 18px;
-  border-top: 1px solid var(--color-slate-200);
+.check-icon-success {
+  color: #16A34A;
+  flex-shrink: 0;
+}
+
+/* Deck Footer */
+.deck-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid var(--color-slate-200);
   font-size: 11px;
+}
+
+.deck-legal-tag {
+  color: var(--color-slate-500);
+  font-style: italic;
+  font-size: 11px;
+}
+
+.deck-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-brand-primary);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.deck-action-btn:hover {
+  background: #EFF6FF;
+  transform: translateX(2px);
 }
 
 /* ==========================================================================
@@ -1366,8 +1663,14 @@ body {
 /* Responsive Media Queries */
 @media (max-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .floating-glass-pill.pill--top {
+    right: 8px;
+  }
+  .floating-glass-pill.pill--bottom {
+    left: 8px;
   }
   .about-grid,
   .therapeutic-grid,
@@ -1384,9 +1687,49 @@ body {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
   .section {
     padding-top: 56px;
     padding-bottom: 56px;
+  }
+  .hero-section {
+    padding-top: 44px;
+    padding-bottom: 52px;
+  }
+  .hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .hero-glow-blob {
+    display: none;
+  }
+  .hero-badge {
+    font-size: 11px;
+    padding: 5px 11px;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .hero-title {
+    font-size: clamp(26px, 6vw, 34px);
+  }
+  .hero-desc {
+    font-size: 14.5px;
+    margin-bottom: 24px;
+  }
+  .hero-metrics-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 12px;
+    padding: 14px;
+  }
+  .metric-cell-sep {
+    display: none;
+  }
+  .floating-glass-pill {
+    display: none;
   }
   .top-bar {
     display: none;
@@ -1417,3 +1760,26 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-ctas .btn {
+    justify-content: center;
+    width: 100%;
+  }
+  .deck-specs-grid {
+    grid-template-columns: 1fr;
+  }
+  .deck-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .deck-action-btn {
+    align-self: flex-end;
+  }
+}
+
