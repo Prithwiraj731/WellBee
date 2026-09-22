@@ -1,0 +1,11 @@
+# ==============================================================================
+# WellBee Pharmaceutical Private Limited - Robots Exclusion Protocol
+# Website: https://www.wellbeepharma.com
+# ==============================================================================
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Sitemap Location
+Sitemap: https://www.wellbeepharma.com/sitemap.xml
