@@ -132,52 +132,42 @@ export default function Hero({ onSelectProduct }) {
             </a>
           </div>
 
-          {/* Enhanced Professional Bento Metrics Bar */}
+          {/* Enhanced Professional Clinical Metrics Bar */}
           <div className="hero-metrics-bar">
             <div className="metric-pod">
               <div className="metric-pod__icon icon-blue">
-                <FlaskConical size={16} />
+                <FlaskConical size={18} />
               </div>
-              <div className="metric-pod__content">
-                <div className="metric-pod__value">{coreCount}</div>
-                <div className="metric-pod__label">Top Formulations (GP, CP, Gyne, Paed)</div>
-              </div>
+              <div className="metric-pod__value">{coreCount} Formulations</div>
+              <div className="metric-pod__label">Core Therapeutic Line</div>
+              <div className="metric-pod__sub">GP • CP • Gynae • Paed</div>
             </div>
-
-            <div className="metric-pod-sep" />
 
             <div className="metric-pod">
               <div className="metric-pod__icon icon-indigo">
-                <MapPin size={16} />
+                <MapPin size={18} />
               </div>
-              <div className="metric-pod__content">
-                <div className="metric-pod__value">Mumbai / Panvel</div>
-                <div className="metric-pod__label">Maharashtra Operations</div>
-              </div>
+              <div className="metric-pod__value">Mumbai &amp; Panvel</div>
+              <div className="metric-pod__label">Maharashtra Operations</div>
+              <div className="metric-pod__sub">Commercial &amp; Trade Hub</div>
             </div>
-
-            <div className="metric-pod-sep" />
 
             <div className="metric-pod">
               <div className="metric-pod__icon icon-emerald">
-                <ShieldCheck size={16} />
+                <ShieldCheck size={18} />
               </div>
-              <div className="metric-pod__content">
-                <div className="metric-pod__value">{qaCount}%</div>
-                <div className="metric-pod__label">cGMP Batch Quality Assay</div>
-              </div>
+              <div className="metric-pod__value">{qaCount}% cGMP</div>
+              <div className="metric-pod__label">Batch Quality Assay</div>
+              <div className="metric-pod__sub">IP / BP Standard Tested</div>
             </div>
-
-            <div className="metric-pod-sep" />
 
             <div className="metric-pod">
               <div className="metric-pod__icon icon-amber">
-                <Award size={16} />
+                <Award size={18} />
               </div>
-              <div className="metric-pod__content">
-                <div className="metric-pod__value">WHO-GMP</div>
-                <div className="metric-pod__label">Schedule M Compliance</div>
-              </div>
+              <div className="metric-pod__value">WHO-GMP</div>
+              <div className="metric-pod__label">Schedule M Compliance</div>
+              <div className="metric-pod__sub">Zero Compromise Quality</div>
             </div>
           </div>
         </motion.div>

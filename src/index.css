@@ -67,6 +67,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 86px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -79,6 +81,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overflow-y: auto;
+  max-width: 100%;
 }
 
 /* Layout Utilities */
@@ -670,58 +673,82 @@ body {
 }
 
 /* ==========================================================================
-   Enhanced Professional Bento Metrics Bar
+   Enhanced Professional Clinical Metrics Bar
    ========================================================================== */
 .hero-metrics-bar {
-  display: flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  background: #FFFFFF;
   border: 1px solid rgba(226, 232, 240, 0.95);
-  border-radius: var(--radius-md);
-  padding: 10px 16px;
+  border-radius: 18px;
+  padding: 16px 8px;
   box-shadow: 
-    0 12px 28px -6px rgba(15, 23, 42, 0.05),
-    0 2px 6px rgba(15, 23, 42, 0.02),
+    0 1px 3px rgba(15, 23, 42, 0.03),
+    0 16px 36px -6px rgba(15, 23, 42, 0.08),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  position: relative;
+  overflow: hidden;
   transition: box-shadow var(--transition-smooth);
+}
+
+/* Signature Clinical Multi-Accent Top Line */
+.hero-metrics-bar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 2.5px;
+  background: linear-gradient(90deg, #1A56DB 0%, #0284C7 33%, #059669 66%, #D97706 100%);
+  border-radius: var(--radius-pill);
+  opacity: 0.9;
 }
 
 .hero-metrics-bar:hover {
   box-shadow: 
-    0 16px 36px -8px rgba(26, 86, 219, 0.08),
-    0 2px 6px rgba(15, 23, 42, 0.02),
+    0 2px 6px rgba(15, 23, 42, 0.04),
+    0 20px 42px -8px rgba(26, 86, 219, 0.1),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset;
 }
 
 .metric-pod {
-  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 6px 10px;
-  border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  text-align: center;
+  padding: 4px 8px;
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.metric-pod:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(226, 232, 240, 0.9), transparent);
 }
 
 .metric-pod:hover {
-  background: rgba(241, 245, 249, 0.7);
-  transform: translateY(-1.5px);
+  transform: translateY(-2px);
 }
 
 .metric-pod__icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  transition: transform var(--transition-fast);
+  margin-bottom: 8px;
+  transition: all var(--transition-fast);
 }
 
 .metric-pod:hover .metric-pod__icon {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
 .icon-blue {
@@ -729,11 +756,17 @@ body {
   color: #1A56DB;
   border: 1px solid #DBEAFE;
 }
+.metric-pod:hover .icon-blue {
+  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.22);
+}
 
 .icon-indigo {
   background: #EEF2FF;
   color: #4F46E5;
   border: 1px solid #E0E7FF;
+}
+.metric-pod:hover .icon-indigo {
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.22);
 }
 
 .icon-emerald {
@@ -741,41 +774,51 @@ body {
   color: #059669;
   border: 1px solid #D1FAE5;
 }
+.metric-pod:hover .icon-emerald {
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.22);
+}
 
 .icon-amber {
   background: #FFFBEB;
   color: #D97706;
   border: 1px solid #FEF3C7;
 }
-
-.metric-pod__content {
-  display: flex;
-  flex-direction: column;
+.metric-pod:hover .icon-amber {
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.22);
 }
 
 .metric-pod__value {
   font-family: var(--font-heading);
-  font-size: 19px;
+  font-size: 15px;
   font-weight: 800;
-  color: var(--color-brand-dark);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 2px;
+  color: var(--color-slate-900);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  transition: color var(--transition-fast);
+}
+
+.metric-pod:hover .metric-pod__value {
+  color: var(--color-brand-primary);
 }
 
 .metric-pod__label {
+  font-family: var(--font-heading);
   font-size: 11px;
-  color: var(--color-slate-500);
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--color-slate-700);
   line-height: 1.3;
+  margin-bottom: 2px;
+  white-space: nowrap;
 }
 
-.metric-pod-sep {
-  width: 1px;
-  height: 34px;
-  background: linear-gradient(to bottom, transparent, var(--color-slate-200), transparent);
-  margin: 0 8px;
-  flex-shrink: 0;
+.metric-pod__sub {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--color-slate-400);
+  line-height: 1.3;
+  white-space: nowrap;
 }
 
 /* ==========================================================================
@@ -2286,25 +2329,40 @@ body {
   .hero-metrics-bar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px 10px;
-    padding: 14px 12px;
+    gap: 16px 8px;
+    padding: 16px 10px;
+    border-radius: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
-  .metric-pod-sep {
+  .metric-pod::after {
     display: none;
   }
   .metric-pod {
-    padding: 4px;
-    gap: 10px;
+    padding: 4px 2px;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
   }
   .metric-pod__icon {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 6px;
   }
   .metric-pod__value {
-    font-size: 17px;
+    font-size: 12px;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.25;
   }
   .metric-pod__label {
-    font-size: 10.5px;
+    font-size: 10px;
+    white-space: normal;
+  }
+  .metric-pod__sub {
+    font-size: 9px;
+    white-space: normal;
   }
   .top-bar {
     display: none;
