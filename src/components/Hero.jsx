@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
   CheckCircle2, 
+  FlaskConical, 
+  MapPin, 
   ShieldCheck, 
-  Sparkles, 
   Award, 
-  ChevronRight, 
-  Activity,
-  Zap,
-  Building2
+  ChevronRight,
+  Sparkles
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { initialProducts } from '../../server/data/products.js';
@@ -18,34 +17,38 @@ const FLAGSHIP_CONFIG = [
   {
     id: 'wb-01',
     tabLabel: 'PantoBee-DSR',
-    shortCat: 'Gastro / GP',
-    keySpec: '≥ 85% Dissolution at 45 min',
-    efficacyLabel: 'Rapid Acid Neutralization & Prokinetic Action',
-    accentColor: '#1A56DB'
+    shortCat: 'Gastroenterology',
+    shortGeneric: 'Pantoprazole 40 mg (EC) + Domperidone 30 mg (SR)',
+    presentation: 'Capsule (Alu-Alu)',
+    targetPrescriber: 'GP / CP / Gastro',
+    keySpec: '≥ 85% Dissolution at 45m'
   },
   {
     id: 'wb-02',
     tabLabel: 'LevoBee-M',
-    shortCat: 'Respiratory / CP',
-    keySpec: '24h Dual H1 & CysLT1 Antagonism',
-    efficacyLabel: 'Comprehensive Allergic & Bronchial Relief',
-    accentColor: '#0284C7'
+    shortCat: 'Respiratory',
+    shortGeneric: 'Levocetirizine 5 mg + Montelukast 10 mg',
+    presentation: 'Tablet (Alu-Alu)',
+    targetPrescriber: 'GP / CP / Chest',
+    keySpec: '24h Dual Pathway Relief'
   },
   {
     id: 'wb-06',
     tabLabel: 'FeroBee-XT',
-    shortCat: 'Gynae / Haematinic',
-    keySpec: 'High Elemental Iron Bioavailability',
-    efficacyLabel: 'Zero Tooth Staining & Mild GI Profile',
-    accentColor: '#7C3AED'
+    shortCat: 'Gynaecology & Fe',
+    shortGeneric: 'Ferrous Ascorbate + Folic Acid + Zinc',
+    presentation: 'Alu-Alu Strip',
+    targetPrescriber: 'Gyne / GP / Paed',
+    keySpec: 'High Elemental Fe Uptake'
   },
   {
     id: 'wb-08',
     tabLabel: 'ParaBee Susp.',
-    shortCat: 'Paediatric / GP',
-    keySpec: 'Calibrated Weight-Based Antipyresis',
-    efficacyLabel: 'Smooth Fever Control in Palatable Base',
-    accentColor: '#059669'
+    shortCat: 'Paediatrics',
+    shortGeneric: 'Paracetamol Paediatric 250 mg / 5 mL',
+    presentation: '60 mL Pet Bottle',
+    targetPrescriber: 'Paed / GP',
+    keySpec: 'Smooth Calibrated Relief'
   }
 ];
 
@@ -129,31 +132,57 @@ export default function Hero({ onSelectProduct }) {
             </a>
           </div>
 
-          {/* Minimalist Trust Metric Strip */}
+          {/* Enhanced Professional Bento Metrics Bar */}
           <div className="hero-metrics-bar">
-            <div className="metric-cell">
-              <div className="metric-cell__value">{coreCount}</div>
-              <div className="metric-cell__label">Top Formulations (GP, CP, Gyne, Paed)</div>
+            <div className="metric-pod">
+              <div className="metric-pod__icon icon-blue">
+                <FlaskConical size={16} />
+              </div>
+              <div className="metric-pod__content">
+                <div className="metric-pod__value">{coreCount}</div>
+                <div className="metric-pod__label">Top Formulations (GP, CP, Gyne, Paed)</div>
+              </div>
             </div>
-            <div className="metric-cell-sep" />
-            <div className="metric-cell">
-              <div className="metric-cell__value">Mumbai / Panvel</div>
-              <div className="metric-cell__label">Maharashtra Operations</div>
+
+            <div className="metric-pod-sep" />
+
+            <div className="metric-pod">
+              <div className="metric-pod__icon icon-indigo">
+                <MapPin size={16} />
+              </div>
+              <div className="metric-pod__content">
+                <div className="metric-pod__value">Mumbai / Panvel</div>
+                <div className="metric-pod__label">Maharashtra Operations</div>
+              </div>
             </div>
-            <div className="metric-cell-sep" />
-            <div className="metric-cell">
-              <div className="metric-cell__value">{qaCount}%</div>
-              <div className="metric-cell__label">cGMP Batch Quality Assay</div>
+
+            <div className="metric-pod-sep" />
+
+            <div className="metric-pod">
+              <div className="metric-pod__icon icon-emerald">
+                <ShieldCheck size={16} />
+              </div>
+              <div className="metric-pod__content">
+                <div className="metric-pod__value">{qaCount}%</div>
+                <div className="metric-pod__label">cGMP Batch Quality Assay</div>
+              </div>
             </div>
-            <div className="metric-cell-sep" />
-            <div className="metric-cell">
-              <div className="metric-cell__value">WHO-GMP</div>
-              <div className="metric-cell__label">Schedule M Compliance</div>
+
+            <div className="metric-pod-sep" />
+
+            <div className="metric-pod">
+              <div className="metric-pod__icon icon-amber">
+                <Award size={16} />
+              </div>
+              <div className="metric-pod__content">
+                <div className="metric-pod__value">WHO-GMP</div>
+                <div className="metric-pod__label">Schedule M Compliance</div>
+              </div>
             </div>
           </div>
         </motion.div>
 
-        {/* Right Column: Interactive Living Flagship Deck */}
+        {/* Right Column: Minimalist Living Flagship Deck */}
         <motion.div 
           className="hero-showcase-container"
           initial={{ opacity: 0, y: 20 }}
@@ -162,25 +191,6 @@ export default function Hero({ onSelectProduct }) {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          {/* Subtle Floating 3D Pills */}
-          <motion.div 
-            className="floating-glass-pill pill--top"
-            animate={{ y: [-3, 4, -3] }}
-            transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <Sparkles size={13} className="text-brand-blue" />
-            <span>Schedule M Validated</span>
-          </motion.div>
-
-          <motion.div 
-            className="floating-glass-pill pill--bottom"
-            animate={{ y: [4, -3, 4] }}
-            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-          >
-            <ShieldCheck size={13} className="text-emerald-600" />
-            <span>100% Alu-Alu Barrier</span>
-          </motion.div>
-
           {/* Main Glass Deck Card */}
           <div className="pharma-glass-deck">
             {/* Interactive Flagship Tabs */}
@@ -205,73 +215,53 @@ export default function Hero({ onSelectProduct }) {
             <div className="deck-status-bar">
               <div className="status-live-badge">
                 <span className="live-ping" />
-                <span className="status-live-text">BATCH QA VERIFIED • IP / BP MONOGRAPH</span>
+                <span className="status-live-text">cGMP VALIDATED • IP / BP SPECIFICATION</span>
               </div>
               <span className="category-pill-tag">{current.shortCat}</span>
             </div>
 
-            {/* Animated Active Product Details */}
+            {/* Minimalist Animated Product Showcase */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
-                initial={{ opacity: 0, y: 8 }}
+                initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.28, ease: 'easeInOut' }}
-                className="deck-body"
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.22, ease: 'easeInOut' }}
+                className="deck-body-minimal"
               >
-                <div className="deck-product-hero">
-                  <div className="deck-audience-chip">
-                    <Building2 size={12} />
-                    <span>Prescriber Target: {current.targetAudience}</span>
-                  </div>
+                <div className="deck-product-headline">
                   <h3 className="deck-product-name">{current.brandName}</h3>
-                  <p className="deck-product-composition">{current.composition}</p>
+                  <p className="deck-product-generic">{current.shortGeneric}</p>
                 </div>
 
-                {/* 4 Clinical Specification Micro-Cards */}
-                <div className="deck-specs-grid">
-                  <div className="deck-spec-card">
-                    <span className="spec-card-title">Dosage Presentation</span>
-                    <span className="spec-card-value">{current.dosageForm}</span>
+                {/* 3 Sleek Quick-Spec Chips */}
+                <div className="deck-chips-row">
+                  <div className="spec-chip">
+                    <span className="chip-bullet" />
+                    <span>{current.targetPrescriber}</span>
                   </div>
-                  <div className="deck-spec-card">
-                    <span className="spec-card-title">Efficacy Benchmark</span>
-                    <span className="spec-card-value spec-card-value--highlight">{current.keySpec}</span>
+                  <div className="spec-chip">
+                    <span className="chip-bullet" />
+                    <span>{current.presentation}</span>
                   </div>
-                  <div className="deck-spec-card">
-                    <span className="spec-card-title">Packaging Format</span>
-                    <span className="spec-card-value">{current.packType}</span>
-                  </div>
-                  <div className="deck-spec-card">
-                    <span className="spec-card-title">Clinical Indication</span>
-                    <span className="spec-card-value">{current.indications ? current.indications[0] : 'Prescription Therapeutic'}</span>
+                  <div className="spec-chip spec-chip--highlight">
+                    <CheckCircle2 size={13} className="chip-icon-success" />
+                    <span>{current.keySpec}</span>
                   </div>
                 </div>
 
-                {/* Quality Validation Checkpoints */}
-                <div className="deck-checkpoints">
-                  <div className="deck-check-item">
-                    <CheckCircle2 size={15} className="check-icon-success" />
-                    <span>Validated Assay Bioequivalence &amp; Accelerated Stability Passed</span>
-                  </div>
-                  <div className="deck-check-item">
-                    <CheckCircle2 size={15} className="check-icon-success" />
-                    <span>High-Barrier Moisture &amp; Light Tamper-Evident Packaging</span>
-                  </div>
-                </div>
-
-                {/* Deck Footer Action */}
-                <div className="deck-footer">
-                  <span className="deck-legal-tag">Ethical Prescription Only</span>
+                {/* Minimalist Action Row */}
+                <div className="deck-action-row">
                   <button 
                     type="button" 
-                    className="deck-action-btn"
+                    className="btn-cool-deck"
                     onClick={() => onSelectProduct && onSelectProduct(current)}
                   >
-                    <span>View Monograph</span>
-                    <ChevronRight size={15} />
+                    <span>View Clinical Monograph</span>
+                    <ChevronRight size={15} className="deck-btn-arrow" />
                   </button>
+                  <span className="deck-micro-note">Ethical Prescription Only</span>
                 </div>
               </motion.div>
             </AnimatePresence>

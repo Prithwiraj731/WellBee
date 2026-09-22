@@ -124,7 +124,7 @@ body {
   margin-right: auto;
 }
 
-/* Buttons */
+/* Buttons - Super Cool Animated Modern Design */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -135,12 +135,19 @@ body {
   font-size: 14px;
   padding: 11px 22px;
   border-radius: var(--radius-sm);
-  transition: all var(--transition-fast);
+  transition: all 240ms cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
   border: none;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn:active {
+  transform: translateY(0px) scale(0.98);
 }
 
 .btn:focus-visible {
@@ -148,32 +155,72 @@ body {
   outline-offset: 2px;
 }
 
+.btn svg {
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Primary Button with Luminous Glint Reflection Sweep */
 .btn--primary {
-  background-color: var(--color-brand-primary);
+  background: linear-gradient(135deg, #1A56DB 0%, #1545B0 100%);
   color: var(--color-white);
-  border: 1px solid var(--color-brand-primary);
-  box-shadow: 0 1px 3px rgba(26, 86, 219, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 2px 8px rgba(26, 86, 219, 0.28), 0 0 0 1px rgba(26, 86, 219, 0.3);
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 100%
+  );
+  transform: skewX(-24deg);
+  pointer-events: none;
+  transition: none;
+  z-index: 1;
+}
+
+.btn--primary:hover::before {
+  left: 140%;
+  transition: left 0.7s ease-in-out;
 }
 
 .btn--primary:hover {
-  background-color: var(--color-brand-hover);
-  border-color: var(--color-brand-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(26, 86, 219, 0.25);
+  background: linear-gradient(135deg, #1D5BD8 0%, #133E9E 100%);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 10px 24px -4px rgba(26, 86, 219, 0.45),
+    0 4px 10px rgba(26, 86, 219, 0.22),
+    0 0 14px rgba(26, 86, 219, 0.28);
 }
 
+/* Outline Button with Soft Radial Hover & Border Glow */
 .btn--outline {
   background-color: var(--color-white);
   color: var(--color-brand-deep);
   border: 1px solid var(--color-slate-300);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
 }
 
 .btn--outline:hover {
   border-color: var(--color-brand-primary);
   color: var(--color-brand-primary);
-  background-color: var(--color-slate-50);
+  background-color: #F0F7FF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(26, 86, 219, 0.12);
 }
 
+/* Secondary Button */
 .btn--secondary {
   background-color: var(--color-brand-light);
   color: var(--color-brand-primary);
@@ -182,15 +229,21 @@ body {
 
 .btn--secondary:hover {
   background-color: #DBEAFE;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(26, 86, 219, 0.15);
 }
 
+/* White Button */
 .btn--white {
   background-color: var(--color-white);
   color: var(--color-brand-dark);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
 }
 
 .btn--white:hover {
   background-color: var(--color-slate-100);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
 }
 
 .btn--sm {
@@ -616,92 +669,121 @@ body {
   transform: translateX(4px);
 }
 
-/* Minimalist Glass Metrics Strip */
+/* ==========================================================================
+   Enhanced Professional Bento Metrics Bar
+   ========================================================================== */
 .hero-metrics-bar {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--color-slate-200);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
   border-radius: var(--radius-md);
-  padding: 14px 20px;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+  padding: 10px 16px;
+  box-shadow: 
+    0 12px 28px -6px rgba(15, 23, 42, 0.05),
+    0 2px 6px rgba(15, 23, 42, 0.02),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  transition: box-shadow var(--transition-smooth);
 }
 
-.metric-cell {
+.hero-metrics-bar:hover {
+  box-shadow: 
+    0 16px 36px -8px rgba(26, 86, 219, 0.08),
+    0 2px 6px rgba(15, 23, 42, 0.02),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.metric-pod {
   flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.metric-pod:hover {
+  background: rgba(241, 245, 249, 0.7);
+  transform: translateY(-1.5px);
+}
+
+.metric-pod__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.metric-pod:hover .metric-pod__icon {
+  transform: scale(1.08);
+}
+
+.icon-blue {
+  background: #EFF6FF;
+  color: #1A56DB;
+  border: 1px solid #DBEAFE;
+}
+
+.icon-indigo {
+  background: #EEF2FF;
+  color: #4F46E5;
+  border: 1px solid #E0E7FF;
+}
+
+.icon-emerald {
+  background: #ECFDF5;
+  color: #059669;
+  border: 1px solid #D1FAE5;
+}
+
+.icon-amber {
+  background: #FFFBEB;
+  color: #D97706;
+  border: 1px solid #FEF3C7;
+}
+
+.metric-pod__content {
   display: flex;
   flex-direction: column;
 }
 
-.metric-cell__value {
+.metric-pod__value {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
   color: var(--color-brand-dark);
-  line-height: 1.2;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
   margin-bottom: 2px;
 }
 
-.metric-cell__label {
+.metric-pod__label {
   font-size: 11px;
   color: var(--color-slate-500);
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
-.metric-cell-sep {
+.metric-pod-sep {
   width: 1px;
-  height: 32px;
-  background-color: var(--color-slate-200);
-  margin: 0 16px;
+  height: 34px;
+  background: linear-gradient(to bottom, transparent, var(--color-slate-200), transparent);
+  margin: 0 8px;
   flex-shrink: 0;
 }
 
 /* ==========================================================================
-   Hero Showcase - Living Flagship Molecule Deck
+   Hero Showcase - Minimalist Living Flagship Molecule Deck
    ========================================================================== */
 .hero-showcase-container {
   position: relative;
   z-index: 2;
-}
-
-/* Floating Micro Glass Pills */
-.floating-glass-pill {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  border-radius: var(--radius-pill);
-  padding: 7px 14px;
-  font-size: 11px;
-  font-weight: 700;
-  font-family: var(--font-heading);
-  color: var(--color-brand-dark);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
-  z-index: 3;
-  pointer-events: none;
-}
-
-.floating-glass-pill.pill--top {
-  top: -16px;
-  right: 18px;
-}
-
-.floating-glass-pill.pill--bottom {
-  bottom: -16px;
-  left: 20px;
-}
-
-.text-brand-blue {
-  color: var(--color-brand-primary);
-}
-
-.text-emerald-600 {
-  color: #059669;
 }
 
 /* Main Pharma Glass Deck */
@@ -711,11 +793,19 @@ body {
   border: 1px solid rgba(219, 234, 254, 0.85);
   border-radius: var(--radius-lg);
   box-shadow: 
-    0 24px 48px -12px rgba(15, 23, 42, 0.09),
+    0 24px 48px -12px rgba(15, 23, 42, 0.08),
     0 4px 12px rgba(26, 86, 219, 0.04),
     0 0 0 1px rgba(255, 255, 255, 0.9) inset;
   overflow: hidden;
   position: relative;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.pharma-glass-deck:hover {
+  box-shadow: 
+    0 30px 56px -14px rgba(15, 23, 42, 0.11),
+    0 6px 16px rgba(26, 86, 219, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.95) inset;
 }
 
 /* Tabs Header */
@@ -741,7 +831,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 12px;
+  padding: 6px 13px;
   background: transparent;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
@@ -784,7 +874,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 18px;
+  padding: 9px 18px;
   background: #F8FAFC;
   border-bottom: 1px solid var(--color-slate-200);
 }
@@ -830,141 +920,159 @@ body {
   font-weight: 700;
   color: var(--color-brand-deep);
   background: #EFF6FF;
-  padding: 2px 9px;
+  padding: 2px 10px;
   border-radius: var(--radius-pill);
   border: 1px solid #BFDBFE;
 }
 
-/* Deck Body */
-.deck-body {
-  padding: 20px 20px 18px;
+/* Minimalist Deck Body */
+.deck-body-minimal {
+  padding: 24px 22px 20px;
 }
 
-.deck-product-hero {
-  margin-bottom: 16px;
-  padding-bottom: 14px;
-  border-bottom: 1px dashed var(--color-slate-200);
-}
-
-.deck-audience-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--color-brand-primary);
-  margin-bottom: 6px;
+.deck-product-headline {
+  margin-bottom: 18px;
 }
 
 .deck-product-name {
   font-family: var(--font-heading);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
   color: var(--color-brand-dark);
-  letter-spacing: -0.02em;
-  margin-bottom: 5px;
+  letter-spacing: -0.025em;
+  margin-bottom: 4px;
+  line-height: 1.2;
 }
 
-.deck-product-composition {
-  font-size: 12.5px;
-  line-height: 1.45;
+.deck-product-generic {
+  font-size: 13.5px;
+  font-weight: 500;
   color: var(--color-slate-600);
+  line-height: 1.45;
 }
 
-/* 4 Specs Micro-Cards */
-.deck-specs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.deck-spec-card {
-  background: #F8FAFC;
-  border: 1px solid var(--color-slate-200);
-  border-radius: var(--radius-sm);
-  padding: 9px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.spec-card-title {
-  font-size: 10.5px;
-  color: var(--color-slate-500);
-  font-weight: 500;
-}
-
-.spec-card-value {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--color-slate-800);
-  line-height: 1.3;
-}
-
-.spec-card-value--highlight {
-  color: #059669;
-  font-weight: 700;
-}
-
-/* Checkpoints */
-.deck-checkpoints {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-
-.deck-check-item {
+/* 3 Minimalist Quick-Spec Chips */
+.deck-chips-row {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--color-slate-700);
+  flex-wrap: wrap;
+  margin-bottom: 24px;
 }
 
-.check-icon-success {
-  color: #16A34A;
-  flex-shrink: 0;
-}
-
-/* Deck Footer */
-.deck-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 14px;
-  border-top: 1px solid var(--color-slate-200);
-  font-size: 11px;
-}
-
-.deck-legal-tag {
-  color: var(--color-slate-500);
-  font-style: italic;
-  font-size: 11px;
-}
-
-.deck-action-btn {
+.spec-chip {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  background: transparent;
-  border: none;
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-brand-primary);
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
+  gap: 6px;
+  background: #F8FAFC;
+  border: 1px solid var(--color-slate-200);
+  border-radius: var(--radius-pill);
+  padding: 6px 13px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--color-slate-700);
   transition: all var(--transition-fast);
 }
 
-.deck-action-btn:hover {
-  background: #EFF6FF;
-  transform: translateX(2px);
+.spec-chip:hover {
+  background: var(--color-white);
+  border-color: #BFDBFE;
+}
+
+.chip-bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+}
+
+.spec-chip--highlight {
+  background: #ECFDF5;
+  border-color: #A7F3D0;
+  color: #065F46;
+}
+
+.chip-icon-success {
+  color: #059669;
+  flex-shrink: 0;
+}
+
+/* Minimalist Action Row & Super Cool Deck Button */
+.deck-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-slate-200);
+}
+
+.btn-cool-deck {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #1A56DB 0%, #0284C7 100%);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 3px 10px rgba(26, 86, 219, 0.25);
+  transition: all 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-cool-deck::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.32) 50%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+  transition: none;
+  z-index: 1;
+}
+
+.btn-cool-deck:hover::before {
+  left: 140%;
+  transition: left 0.65s ease-in-out;
+}
+
+.btn-cool-deck:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 20px -2px rgba(26, 86, 219, 0.42),
+    0 2px 6px rgba(26, 86, 219, 0.2);
+}
+
+.btn-cool-deck:active {
+  transform: translateY(0px) scale(0.98);
+}
+
+.deck-btn-arrow {
+  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-cool-deck:hover .deck-btn-arrow {
+  transform: translateX(4px);
+}
+
+.deck-micro-note {
+  font-size: 11px;
+  color: var(--color-slate-400);
+  font-weight: 500;
 }
 
 /* ==========================================================================
@@ -1666,12 +1774,6 @@ body {
     grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
-  .floating-glass-pill.pill--top {
-    right: 8px;
-  }
-  .floating-glass-pill.pill--bottom {
-    left: 8px;
-  }
   .about-grid,
   .therapeutic-grid,
   .products-grid,
@@ -1722,14 +1824,25 @@ body {
   .hero-metrics-bar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px 12px;
-    padding: 14px;
+    gap: 12px 10px;
+    padding: 14px 12px;
   }
-  .metric-cell-sep {
+  .metric-pod-sep {
     display: none;
   }
-  .floating-glass-pill {
-    display: none;
+  .metric-pod {
+    padding: 4px;
+    gap: 10px;
+  }
+  .metric-pod__icon {
+    width: 32px;
+    height: 32px;
+  }
+  .metric-pod__value {
+    font-size: 17px;
+  }
+  .metric-pod__label {
+    font-size: 10.5px;
   }
   .top-bar {
     display: none;
@@ -1770,16 +1883,21 @@ body {
     justify-content: center;
     width: 100%;
   }
-  .deck-specs-grid {
-    grid-template-columns: 1fr;
+  .deck-body-minimal {
+    padding: 18px 16px;
   }
-  .deck-footer {
+  .deck-action-row {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    align-items: stretch;
+    gap: 10px;
   }
-  .deck-action-btn {
-    align-self: flex-end;
+  .btn-cool-deck {
+    justify-content: center;
+    width: 100%;
+  }
+  .deck-micro-note {
+    text-align: center;
   }
 }
+
 
