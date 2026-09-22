@@ -60,4 +60,33 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Statutory Legal & Compliance Pages -->
+  <url>
+    <loc>https://www.wellbeepharma.in/privacy-policy</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wellbeepharma.in/terms-of-use</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wellbeepharma.in/cookie-policy</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.wellbeepharma.in/medical-disclaimer</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

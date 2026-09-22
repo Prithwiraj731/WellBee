@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
 import Header from './components/Header';
-import Hero from './components/Hero';
-import AboutSection from './components/AboutSection';
-import TherapeuticAreas from './components/TherapeuticAreas';
-import ProductCatalogue from './components/ProductCatalogue';
-import QualityManufacturing from './components/QualityManufacturing';
-import EnquiryForm from './components/EnquiryForm';
-import CareersSection from './components/CareersSection';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+
+import HomePage from './pages/HomePage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import CookiePolicy from './pages/CookiePolicy';
+import MedicalDisclaimer from './pages/MedicalDisclaimer';
 
 import ProductModal from './components/ProductModal';
 import CareersModal from './components/CareersModal';
-import LegalModal from './components/LegalModal';
 
 export default function App() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -19,7 +20,6 @@ export default function App() {
   const [prefilledMessage, setPrefilledMessage] = useState('');
   const [prefilledType, setPrefilledType] = useState('');
   const [selectedJob, setSelectedJob] = useState(null);
-  const [legalModalType, setLegalModalType] = useState(null);
 
   // Guarantee body scroll is enabled on mount
   useEffect(() => {
@@ -37,32 +37,45 @@ export default function App() {
 
   return (
     <div className="app-root">
-      <Header onOpenLegal={setLegalModalType} />
+      <ScrollToTop />
+      <Header />
 
-      <main>
-        <Hero onSelectProduct={setSelectedProduct} />
-        <AboutSection />
-        <TherapeuticAreas onSelectCategory={setActiveCategory} />
-        <ProductCatalogue 
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          onSelectProduct={setSelectedProduct}
-          onInquire={handleInquire}
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <HomePage 
+              activeCategory={activeCategory}
+              onCategoryChange={setActiveCategory}
+              onSelectProduct={setSelectedProduct}
+              onInquire={handleInquire}
+              onApplyJob={setSelectedJob}
+              prefilledMessage={prefilledMessage}
+              prefilledType={prefilledType}
+            />
+          } 
         />
-        <QualityManufacturing />
-        <CareersSection onApply={setSelectedJob} />
-        <EnquiryForm 
-          prefilledMessage={prefilledMessage}
-          prefilledType={prefilledType}
-        />
-      </main>
+        
+        {/* Dedicated Statutory & Legal Pages */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
+        
+        <Route path="/terms-of-use" element={<TermsOfUse />} />
+        <Route path="/terms" element={<Navigate to="/terms-of-use" replace />} />
+        
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/cookies" element={<Navigate to="/cookie-policy" replace />} />
+        
+        <Route path="/medical-disclaimer" element={<MedicalDisclaimer />} />
+        <Route path="/disclaimer" element={<Navigate to="/medical-disclaimer" replace />} />
+        
+        {/* Catch-all redirect to Home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
 
-      <Footer 
-        onOpenLegal={setLegalModalType}
-        onSelectCategory={setActiveCategory}
-      />
+      <Footer onSelectCategory={setActiveCategory} />
 
-      {/* Interactive Modals */}
+      {/* Interactive Modals for Product Monographs & Job Applications */}
       {selectedProduct && (
         <ProductModal 
           product={selectedProduct}
@@ -75,13 +88,6 @@ export default function App() {
         <CareersModal 
           position={selectedJob}
           onClose={() => setSelectedJob(null)}
-        />
-      )}
-
-      {legalModalType && (
-        <LegalModal 
-          type={legalModalType}
-          onClose={() => setLegalModalType(null)}
         />
       )}
     </div>

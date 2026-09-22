@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone, Mail, ShieldCheck, UserCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Header({ onOpenLegal }) {
+export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === '/';
 
   const navLinks = [
     { label: 'Home', href: '#home' },
@@ -14,6 +18,27 @@ export default function Header({ onOpenLegal }) {
     { label: 'Careers', href: '#careers' },
     { label: 'Contact', href: '#contact' },
   ];
+
+  const handleNavClick = (e, href) => {
+    setMobileOpen(false);
+    if (isHome) {
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we are on a legal page, navigate back to home with the hash
+      e.preventDefault();
+      navigate('/' + href);
+      setTimeout(() => {
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+    }
+  };
 
   return (
     <>
@@ -35,13 +60,13 @@ export default function Header({ onOpenLegal }) {
               <Mail size={14} />
               wellbeepharmaceuticals@gmail.com
             </a>
-            <button 
-              onClick={() => onOpenLegal('disclaimer')} 
+            <Link 
+              to="/medical-disclaimer" 
               className="top-bar__link"
-              style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit' }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', textDecoration: 'none' }}
             >
               Pharmacovigilance Notice
-            </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -49,7 +74,7 @@ export default function Header({ onOpenLegal }) {
       {/* Main Sticky Navbar */}
       <header className="navbar">
         <div className="container navbar__inner">
-          <a href="#home" className="brand" aria-label="WellBee Pharmaceutical Home">
+          <Link to="/" className="brand" aria-label="WellBee Pharmaceutical Home">
             <div className="brand__logo-symbol">
               <svg viewBox="0 0 36 36" fill="none" className="brand__svg">
                 <path d="M18 3L31 10.5V25.5L18 33L5 25.5V10.5L18 3Z" stroke="#1A56DB" strokeWidth="2.5" fill="#EFF6FF"/>
@@ -62,13 +87,17 @@ export default function Header({ onOpenLegal }) {
               <span className="brand__name">WellBee</span>
               <span className="brand__suffix">Pharmaceutical</span>
             </div>
-          </a>
+          </Link>
 
           <nav className="nav-menu" aria-label="Desktop Navigation">
             <ul className="nav-list">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className="nav-link">
+                  <a 
+                    href={isHome ? link.href : `/${link.href}`} 
+                    className="nav-link"
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
                     {link.label}
                   </a>
                 </li>
@@ -77,7 +106,11 @@ export default function Header({ onOpenLegal }) {
           </nav>
 
           <div className="nav-actions">
-            <a href="#contact" className="btn btn--outline btn--sm hide-mobile">
+            <a 
+              href={isHome ? '#contact' : '/#contact'} 
+              className="btn btn--outline btn--sm hide-mobile"
+              onClick={(e) => handleNavClick(e, '#contact')}
+            >
               <UserCheck size={14} />
               Distributor Enquiry
             </a>
@@ -128,9 +161,9 @@ export default function Header({ onOpenLegal }) {
                 {navLinks.map((link) => (
                   <a 
                     key={link.label} 
-                    href={link.href} 
+                    href={isHome ? link.href : `/${link.href}`} 
                     className="mobile-drawer__link"
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => handleNavClick(e, link.href)}
                   >
                     {link.label}
                   </a>
@@ -147,9 +180,9 @@ export default function Header({ onOpenLegal }) {
                   </a>
                 </p>
                 <a 
-                  href="#contact" 
+                  href={isHome ? '#contact' : '/#contact'} 
                   className="btn btn--primary btn--block"
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => handleNavClick(e, '#contact')}
                 >
                   Submit Trade Enquiry
                 </a>
