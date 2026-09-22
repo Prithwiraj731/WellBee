@@ -5,16 +5,17 @@ export const initialProducts = [
     genericName: 'Pantoprazole 40 mg + Domperidone SR',
     category: 'gastro',
     categoryLabel: 'Gastroenterology',
-    dosageForm: 'Capsule (SR)',
+    targetAudience: 'GP / CP / Gastro',
+    dosageForm: 'Capsule (Enteric & Sustained Release)',
     strength: '40 mg + 30 mg SR',
-    specialty: 'Gastroenterologists, Physicians',
-    packType: '10 × 10 Alu-Alu Strip',
+    specialty: 'General Physicians (GP), Consulting Physicians (CP), Gastroenterologists',
+    packType: '10 × 10 Alu-Alu Blister Strip',
     composition: 'Pantoprazole Sodium IP 40 mg (Enteric Coated) + Domperidone IP 30 mg (Sustained Release)',
-    description: 'Proton pump inhibitor and prokinetic agent engineered for acid suppression and gastrointestinal motility in severe GERD and reflux oesophagitis.',
+    description: 'Gold-standard acid suppressant and prokinetic combination engineered for rapid symptom control in severe GERD, reflux oesophagitis, and non-ulcer dyspepsia.',
     indications: [
       'Gastroesophageal Reflux Disease (GERD)',
-      'Reflux Oesophagitis & Dyspepsia',
-      'NSAID-Induced Gastric Ulcer Prophylaxis'
+      'Reflux Oesophagitis & Chronic Dyspepsia',
+      'NSAID-Induced Gastritis Prophylaxis'
     ]
   },
   {
@@ -23,15 +24,16 @@ export const initialProducts = [
     genericName: 'Levocetirizine 5 mg + Montelukast 10 mg',
     category: 'respiratory',
     categoryLabel: 'Respiratory & Pulmonology',
-    dosageForm: 'Tablet (FC)',
+    targetAudience: 'GP / CP',
+    dosageForm: 'Tablet (Film Coated)',
     strength: '5 mg + 10 mg',
-    specialty: 'Pulmonologists, ENT, Allergists',
-    packType: '10 × 10 Alu-Alu Pack',
+    specialty: 'General Physicians (GP), Consulting Physicians (CP), Pulmonologists, ENT',
+    packType: '10 × 10 Alu-Alu Blister Pack',
     composition: 'Levocetirizine Dihydrochloride IP 5 mg + Montelukast Sodium IP 10 mg',
-    description: 'Dual-action H1-antihistamine and leukotriene receptor antagonist delivering 24-hour relief from seasonal and perennial allergic rhinitis.',
+    description: 'Synergistic H1-receptor antihistamine and cysteinyl leukotriene receptor antagonist delivering 24-hour relief from seasonal and perennial allergic manifestations.',
     indications: [
       'Allergic Rhinitis (Seasonal & Perennial)',
-      'Comorbid Mild-to-Moderate Asthma',
+      'Allergic Bronchitis & Wheezing',
       'Chronic Idiopathic Urticaria'
     ]
   },
@@ -41,16 +43,17 @@ export const initialProducts = [
     genericName: 'Aceclofenac 100 mg + Paracetamol 325 mg',
     category: 'ortho',
     categoryLabel: 'Pain & Orthopaedics',
-    dosageForm: 'Tablet (FC)',
+    targetAudience: 'GP / CP',
+    dosageForm: 'Tablet (Film Coated)',
     strength: '100 mg + 325 mg',
-    specialty: 'Orthopaedicians, Rheumatologists',
+    specialty: 'General Physicians (GP), Consulting Physicians (CP), Orthopaedicians',
     packType: '10 × 10 Blister Strip',
     composition: 'Aceclofenac IP 100 mg + Paracetamol IP 325 mg',
-    description: 'Selective COX-2 preferential NSAID and antipyretic combination for acute musculoskeletal inflammation with high gastric tolerability.',
+    description: 'Potent preferential COX-2 inhibitor paired with a proven central antipyretic/analgesic for prompt management of acute inflammatory pain with superior gastric tolerability.',
     indications: [
-      'Osteoarthritis & Rheumatoid Arthritis Pain',
-      'Ankylosing Spondylitis & Lumbago',
-      'Post-Traumatic Musculoskeletal Inflammation'
+      'Osteoarthritis & Rheumatoid Arthritis',
+      'Ankylosing Spondylitis & Lower Back Pain (Lumbago)',
+      'Acute Post-Traumatic Musculoskeletal Pain'
     ]
   },
   {
@@ -59,16 +62,17 @@ export const initialProducts = [
     genericName: 'Methylcobalamin + Alpha Lipoic Acid + B-Vitamins',
     category: 'nutrition',
     categoryLabel: 'Neuro-Nutrition & Metabolic',
-    dosageForm: 'Capsule',
+    targetAudience: 'GP / CP',
+    dosageForm: 'Capsule (Softgel / Hard Gelatin)',
     strength: '1500 mcg + 100 mg + B-Complex',
-    specialty: 'Neurologists, Diabetologists',
+    specialty: 'General Physicians (GP), Consulting Physicians (CP), Diabetologists, Neurologists',
     packType: '10 × 10 Alu-Alu Strip',
-    composition: 'Methylcobalamin 1500 mcg + Alpha Lipoic Acid 100 mg + Pyridoxine HCl 3 mg + Folic Acid 1.5 mg + Thiamine Mononitrate 10 mg',
-    description: 'Targeted neurotropic compound designed to promote axonal myelin regeneration and manage diabetic peripheral neuropathy.',
+    composition: 'Methylcobalamin 1500 mcg + Alpha Lipoic Acid 100 mg + Pyridoxine HCl (Vit B6) 3 mg + Folic Acid 1.5 mg + Thiamine Mononitrate 10 mg',
+    description: 'Advanced neuroprotective and antioxidant complex formulated to stimulate axonal regeneration, restore nerve conduction velocity, and relieve diabetic peripheral neuropathy.',
     indications: [
-      'Diabetic Peripheral Neuropathy',
-      'Sciatica & Lumbago Neuralgia',
-      'Subclinical B-Complex Deficiencies'
+      'Diabetic & Peripheral Neuropathy',
+      'Sciatica, Cervical & Lumbar Radiculopathy',
+      'Generalized Neuritic Pain & B-Vitamin Deficiency'
     ]
   },
   {
@@ -77,34 +81,36 @@ export const initialProducts = [
     genericName: 'Calcium + Vitamin D3',
     category: 'bone',
     categoryLabel: 'Bone Health & Endocrinology',
-    dosageForm: 'Tablet (FC)',
+    targetAudience: 'GP / Gyne',
+    dosageForm: 'Tablet (Film Coated)',
     strength: 'Elemental Ca 500 mg + D3 250 IU',
-    specialty: 'Gynaecologists, Orthopaedicians',
+    specialty: 'General Physicians (GP), Gynaecologists (Gyne), Orthopaedicians',
     packType: '10 × 15 Tablets Blister',
-    composition: 'Calcium Carbonate IP 1250 mg (Eq. to Elemental Calcium 500 mg) + Cholecalciferol (Vitamin D3) IP 250 IU',
-    description: 'Therapeutic elemental calcium enriched with Vitamin D3 to enhance intestinal mineral absorption and preserve skeletal bone density.',
+    composition: 'Calcium Carbonate IP 1250 mg (equivalent to Elemental Calcium 500 mg) + Cholecalciferol (Vitamin D3) IP 250 IU',
+    description: 'Therapeutic elemental calcium enriched with Cholecalciferol to maximize intestinal calcium absorption, preserve bone mineral density, and meet maternal gestational demands.',
     indications: [
-      'Osteoporosis & Osteopenia Management',
-      'Pregnancy & Lactational Mineral Supplementation',
-      'Senile Bone Demineralization'
+      'Pregnancy & Lactation Calcium Supplementation',
+      'Post-Menopausal Osteoporosis & Senile Osteopenia',
+      'Hypocalcaemia & Skeletal Demineralization'
     ]
   },
   {
     id: 'wb-06',
-    brandName: 'FeroBee-Z Drops',
-    genericName: 'Iron + Folic Acid + Zinc / Paediatric Drop',
-    category: 'paediatrics',
-    categoryLabel: 'Paediatrics & Hydration',
-    dosageForm: 'Paediatric Oral Drops',
-    strength: 'Fe 10 mg + FA 100 mcg + Zn 2.5 mg / ml',
-    specialty: 'Paediatricians, Neonatologists',
-    packType: '15 ml Bottle with Calibrated Pipette',
-    composition: 'Ferrous Ascorbate eq. to Elemental Iron 10 mg + Folic Acid IP 100 mcg + Zinc Sulphate eq. to Elemental Zinc 2.5 mg per ml',
-    description: 'Calibrated infant haematinic delivering bioavailable iron without gastric irritation or teeth discoloration.',
+    brandName: 'FeroBee-XT',
+    genericName: 'Iron + Folic Acid + Zinc (Tab / Syp / Drop)',
+    category: 'nutrition',
+    categoryLabel: 'Haematinics & Gynaecology',
+    targetAudience: 'Gyne / GP / Paediatric',
+    dosageForm: 'Tablets, Syrup & Paediatric Oral Drops',
+    strength: 'Fe 100 mg + FA 1.5 mg + Zn 22.5 mg / ml drop',
+    specialty: 'Gynaecologists (Gyne), General Physicians (GP), Paediatricians',
+    packType: '10 × 10 Alu-Alu / 15 ml Calibrated Pipette Drops',
+    composition: 'Ferrous Ascorbate equivalent to Elemental Iron 100 mg + Folic Acid IP 1.5 mg + Zinc Sulphate Monohydrate 22.5 mg (Drops: Fe 10 mg + FA 100 mcg + Zn 2.5 mg / ml)',
+    description: 'Next-generation haematinic providing high elemental iron bioavailability with minimal gastrointestinal upset and zero tooth staining, suitable across gynaecology and paediatric demographics.',
     indications: [
-      'Infantile Iron Deficiency Anaemia',
-      'Prophylaxis in Low Birth Weight Infants',
-      'Paediatric Growth Spurt Micronutrient Support'
+      'Iron Deficiency Anaemia in Pregnancy & Adolescence',
+      'Nutritional Anaemia in Paediatrics & Growth Spurts',
+      'Post-Surgical & Chronic Blood Loss Convalescence'
     ]
   },
   {
@@ -113,34 +119,36 @@ export const initialProducts = [
     genericName: 'ORS + Zinc',
     category: 'paediatrics',
     categoryLabel: 'Paediatrics & Hydration',
-    dosageForm: 'Oral Rehydration Powder',
+    targetAudience: 'Paedia / GP',
+    dosageForm: 'Oral Rehydration Salts (WHO Sachet)',
     strength: 'WHO Low-Osmolarity Formula + 20 mg Zinc',
-    specialty: 'Paediatricians, General Physicians',
-    packType: '21.8 g Sachet (Box of 25)',
-    composition: 'Sodium Chloride IP 2.6g + Potassium Chloride IP 1.5g + Sodium Citrate IP 2.9g + Dextrose Anhydrous IP 13.5g + Zinc Sulphate eq. to Elemental Zinc 20 mg',
-    description: 'WHO low-osmolarity oral rehydration formula enriched with zinc to promptly replenish electrolytes during acute dehydration.',
+    specialty: 'Paediatricians (Paedia), General Physicians (GP)',
+    packType: '21.8 g Sachet (Box of 25 Sachets)',
+    composition: 'Sodium Chloride IP 2.6g + Potassium Chloride IP 1.5g + Sodium Citrate IP 2.9g + Dextrose Anhydrous IP 13.5g + Zinc Gluconate equivalent to Elemental Zinc 20 mg',
+    description: 'WHO-recommended low-osmolarity oral rehydration formula fortified with elemental zinc to rapidly replenish vital electrolytes, shorten diarrhoeal duration, and prevent childhood dehydration.',
     indications: [
-      'Acute Diarrhoeal Dehydration in Children & Adults',
-      'Traveler’s Diarrhea & Electrolyte Depletion',
-      'Heat Exhaustion & Exertional Dehydration'
+      'Acute Diarrhoeal Dehydration in Children & Infants',
+      'Electrolyte Replenishment during Gastroenteritis',
+      'Heat Exhaustion, Summer Dehydration & Viral Fevers'
     ]
   },
   {
     id: 'wb-08',
     brandName: 'ParaBee Suspension',
-    genericName: 'Paracetamol Paediatric Suspension 125 mg / 250 mg',
+    genericName: 'Paracetamol Paediatric Suspension (125 mg / 250 mg)',
     category: 'paediatrics',
-    categoryLabel: 'Paediatrics & Hydration',
-    dosageForm: 'Paediatric Suspension',
-    strength: '125 mg / 5 ml & 250 mg / 5 ml',
-    specialty: 'Paediatricians, General Practitioners',
-    packType: '60 ml Bottle with Measuring Cup',
-    composition: 'Paracetamol IP 125 mg (or 250 mg Forte) per 5 ml in a palatable fruit-flavored vehicle',
-    description: 'Fast-acting, gentle paediatric antipyretic suspension for weight-calibrated fever reduction and acute teething discomfort.',
+    categoryLabel: 'Paediatrics & Antipyretic',
+    targetAudience: 'Paed / GP',
+    dosageForm: 'Paediatric Oral Suspension',
+    strength: '125 mg / 5 ml & 250 mg / 5 ml (DS)',
+    specialty: 'Paediatricians (Paed), General Physicians (GP)',
+    packType: '60 ml Pet Bottle with Calibrated Measuring Cup',
+    composition: 'Paracetamol IP 125 mg / 5 ml (Standard) and 250 mg / 5 ml (Forte DS) in a child-friendly, non-narcotic palatable syrup base',
+    description: 'Trusted, fast-acting paediatric antipyretic and analgesic suspension providing smooth, weight-calibrated fever reduction and rapid relief from childhood aches.',
     indications: [
-      'Paediatric Pyrexia & Post-Vaccination Fever',
-      'Teething Discomfort & Earache',
-      'Mild-to-Moderate Childhood Pain'
+      'Paediatric High Fever & Post-Immunization Pyrexia',
+      'Teething Pain, Earache & Acute Headache',
+      'Flu-Related Body Ache & Mild-to-Moderate Childhood Pain'
     ]
   },
   {
@@ -149,16 +157,17 @@ export const initialProducts = [
     genericName: 'Ambroxol + Guaiphenesin + Levosalbutamol Syrup',
     category: 'respiratory',
     categoryLabel: 'Respiratory & Pulmonology',
-    dosageForm: 'Expectorant Syrup',
+    targetAudience: 'GP / Paediatric',
+    dosageForm: 'Expectorant Syrup (Sugar-Free)',
     strength: '1 mg + 30 mg + 50 mg / 5 ml',
-    specialty: 'Pulmonologists, Paediatricians, ENT',
+    specialty: 'General Physicians (GP), Paediatricians, Pulmonologists, ENT',
     packType: '100 ml Amber Bottle with Measuring Cap',
-    composition: 'Levosalbutamol Sulphate IP eq. to Levosalbutamol 1 mg + Ambroxol HCl IP 30 mg + Guaiphenesin IP 50 mg per 5 ml (Sugar-Free)',
-    description: 'Triple-action broncho-mucolytic expectorant combining selective beta-2 bronchodilation with mucus thinning and airway clearance.',
+    composition: 'Levosalbutamol Sulphate IP equivalent to Levosalbutamol 1 mg + Ambroxol Hydrochloride IP 30 mg + Guaiphenesin IP 50 mg per 5 ml',
+    description: 'Triple-action broncho-mucolytic expectorant combining precise beta-2 bronchodilation, airway liquefaction, and surfactant stimulation for free breathing and mucus expulsion.',
     indications: [
-      'Productive Cough with Bronchospasm',
-      'Acute & Chronic Bronchitis / COPD',
-      'Asthmatic Bronchitis & Chest Congestion'
+      'Productive Cough associated with Bronchospasm',
+      'Acute & Chronic Bronchitis / Tracheobronchitis',
+      'Asthmatic Bronchitis & Paediatric Chest Congestion'
     ]
   },
   {
@@ -167,16 +176,17 @@ export const initialProducts = [
     genericName: 'Vitamin D3 (Cholecalciferol) Oral Solution / Sachet',
     category: 'bone',
     categoryLabel: 'Bone Health & Endocrinology',
-    dosageForm: 'Oral Solution & Sachet',
+    targetAudience: 'GP / Gyne / Paediatric',
+    dosageForm: 'Nano Oral Solution (Shots) & Granule Sachet',
     strength: 'Cholecalciferol 60,000 IU',
-    specialty: 'Endocrinologists, Orthopaedicians',
-    packType: '4 × 5 ml Shots & 1 g Granule Sachet',
-    composition: 'Cholecalciferol IP 60,000 IU (Nano-emulsion liquid / oral granules)',
-    description: 'High-dose weekly therapeutic Vitamin D3 formulation engineered for high systemic bioavailability and rapid calcium restoration.',
+    specialty: 'General Physicians (GP), Gynaecologists (Gyne), Paediatricians, Orthopaedics',
+    packType: '4 × 5 ml Nano Shots / 1 g Granule Sachet',
+    composition: 'Cholecalciferol IP 60,000 IU (Nano-droplet emulsion liquid for instant absorption & water-dispersible granules)',
+    description: 'High-potency weekly therapeutic Cholecalciferol formulation engineered for rapid calcium restoration, immune modulation, and musculoskeletal structural integrity.',
     indications: [
-      'Clinical Hypovitaminosis D Deficiency',
-      'Osteomalacia & Senile Osteoporosis Adjunct',
-      'Immune Function & Metabolic Support'
+      'Clinical Hypovitaminosis D & Calcium Deficiency',
+      'Antenatal & Postnatal Maternal Vitamin D Optimization',
+      'Paediatric Rickets & Senile Osteomalacia Management'
     ]
   }
 ];

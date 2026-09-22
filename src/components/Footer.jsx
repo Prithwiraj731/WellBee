@@ -31,10 +31,11 @@ export default function Footer({ onOpenLegal, onSelectCategory }) {
             </div>
           </div>
           <p style={{ fontSize: '13px', color: '#94A3B8', lineHeight: 1.6, maxWidth: '300px', marginBottom: '14px' }}>
-            WellBee Pharmaceutical Private Limited develops research-backed therapeutic formulations adhering strictly to Schedule M &amp; cGMP norms.
+            WellBee Pharmaceutical Private Limited develops research-backed formulations across GP, CP, Gynae, and Paediatrics. Headquartered in Maharashtra (Mumbai / Panvel).
           </p>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#64748B' }}>
-            CIN: U24239MH2024PTC490123
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#64748B', lineHeight: 1.5 }}>
+            CIN: U24239MH2024PTC490123<br />
+            Registered in Maharashtra, India
           </div>
         </div>
 
@@ -72,7 +73,9 @@ export default function Footer({ onOpenLegal, onSelectCategory }) {
           </p>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.06)', padding: '8px 12px', borderRadius: '6px', color: '#60A5FA', fontSize: '12px', fontFamily: 'var(--font-mono)' }}>
             <PhoneCall size={14} />
-            <span>pv@wellbeepharma.com | 1800-400-WELL</span>
+            <a href="tel:+918796913727" style={{ color: 'inherit', textDecoration: 'none' }}>
+              +91 87969 13727 | Trade &amp; Safety Desk
+            </a>
           </div>
         </div>
       </div>

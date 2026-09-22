@@ -6,8 +6,8 @@ const jobOpenings = [
   {
     id: 'job-1',
     title: 'Medical Representative (MR)',
-    division: 'Specialist Divisions',
-    location: 'Mumbai, Pune, Ahmedabad',
+    division: 'GP, CP, Gynae & Paediatric Divisions',
+    location: 'Mumbai & Panvel, Maharashtra',
     summary: 'Engage consulting physicians and paediatricians to communicate scientific formulation advantages and support ethical prescriptions.',
     experience: '1–3 Years in Pharma Sales'
   },
@@ -15,7 +15,7 @@ const jobOpenings = [
     id: 'job-2',
     title: 'Quality Assurance Executive',
     division: 'Regulatory & Compliance',
-    location: 'Corporate Quality Hub, Mumbai',
+    location: 'Corporate Quality Hub, Mumbai / Panvel',
     summary: 'Maintain batch release documentation, review CoA records, and ensure vendor facilities comply with Schedule M & cGMP norms.',
     experience: '2–4 Years in cGMP QA'
   },
@@ -23,7 +23,7 @@ const jobOpenings = [
     id: 'job-3',
     title: 'Supply Chain & Stockist Lead',
     division: 'Logistics Operations',
-    location: 'Central Distribution Center, Bhiwandi',
+    location: 'Maharashtra Central Distribution, Panvel',
     summary: 'Coordinate temperature-controlled dispatch, inventory replenishment for stockists, and ERP fulfillment workflows.',
     experience: '3–5 Years in Pharma Logistics'
   }

@@ -23,12 +23,12 @@ export default function Header({ onOpenLegal }) {
           <div className="top-bar__left">
             <span className="top-bar__item">
               <ShieldCheck size={14} className="text-success" />
-              cGMP Compliant Production Standards
+              Maharashtra Enterprise (Mumbai / Panvel Hub)
             </span>
-            <span className="top-bar__item">
+            <a href="tel:+918796913727" className="top-bar__item" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Phone size={14} />
-              Pharma Trade Desk: +91 (022) 6800-4000
-            </span>
+              Trade Desk: +91 87969 13727
+            </a>
           </div>
           <div className="top-bar__right">
             <span className="top-bar__item">
@@ -138,8 +138,13 @@ export default function Header({ onOpenLegal }) {
               </nav>
 
               <div className="mobile-drawer__footer">
-                <p style={{ fontSize: '12px', color: '#64748B', marginBottom: '12px' }}>
-                  Trade Desk: +91 (022) 6800-4000
+                <p style={{ fontSize: '12px', color: '#64748B', marginBottom: '4px' }}>
+                  Maharashtra Corporate Hub (Mumbai / Panvel)
+                </p>
+                <p style={{ fontSize: '13px', fontWeight: 600, color: '#1E293B', marginBottom: '12px' }}>
+                  <a href="tel:+918796913727" style={{ color: 'inherit', textDecoration: 'none' }}>
+                    Trade Desk: +91 87969 13727
+                  </a>
                 </p>
                 <a 
                   href="#contact" 

@@ -28,7 +28,7 @@ This repository houses the full-stack corporate web application and backend API 
 - **Interactive Technical Monographs**: Accessible, high-contrast modal windows detailing active pharmaceutical ingredients (APIs), excipients, pharmacopeial standards (IP/BP), dissolution kinetics, and statutory Schedule H prescription warnings.
 - **Commercial Inquiry & Distribution Desk**: Integrated contact gateway connected to the Node.js Express backend (`POST /api/enquiries`) with bot-prevention captcha and unique ticket identification (`WB-XXXXX`).
 - **Talent Acquisition Engine**: Career openings portal with application submission workflow (`POST /api/careers/apply`).
-- **Pharmacovigilance & Drug Safety**: Dedicated adverse event reporting channel (`pv@wellbeepharma.com`) and regulatory hotline.
+- **Pharmacovigilance & Drug Safety**: Dedicated adverse event reporting channel (`wellbeepharmaceuticals@gmail.com`) and regulatory hotline.
 - **SEO & Discoverability**: Validated XML Sitemap (`/sitemap.xml`), Robots Exclusion Protocol (`/robots.txt`), and Schema.org `MedicalOrganization` structured metadata.
 
 ---
@@ -305,7 +305,16 @@ docker run -p 5000:5000 -e PORT=5000 wellbee-pharma
 
 - **Schedule H Caution**: Formulations documented within this repository represent prescription pharmaceuticals under Indian Drugs and Cosmetics Rules. They may only be dispensed against a valid medical prescription from a registered medical practitioner.
 - **cGMP / Schedule M**: Manufacturing protocols reference revised Schedule M (Good Manufacturing Practices) and WHO-GMP guidelines.
-- **Pharmacovigilance Desk**: To report an adverse drug event (AE) or product quality complaint, email `pv@wellbeepharma.com` or call the toll-free safety desk at `1800-400-WELL`.
+- **Direct Trade & Safety Line**: For distribution queries or to report an adverse event (AE), contact our desk at **`+91 87969 13727`** or email `info@wellbeepharma.in`.
+
+---
+
+## Corporate Information
+
+- **Company Name**: WellBee Pharmaceutical Private Limited
+- **Headquarters**: Mumbai / Panvel, Maharashtra, India
+- **Phone**: `+91 87969 13727`
+- **CIN**: `U24239MH2024PTC490123` (Registered in Maharashtra)
 
 ---
 

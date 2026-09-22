@@ -34,7 +34,7 @@ export default function Hero() {
         >
           <div className="hero-badge">
             <span className="hero-badge__dot" />
-            <span>Corporate Pharmaceutical Enterprise</span>
+            <span>Maharashtra Enterprise • Mumbai / Panvel Hub</span>
           </div>
 
           <h1 className="hero-title">
@@ -43,36 +43,36 @@ export default function Hero() {
           </h1>
 
           <p className="hero-desc">
-            WellBee Pharmaceutical Private Limited develops research-backed, cGMP-validated pharmaceutical formulations across acute and chronic therapeutic verticals. Built for clinical specialists, verified by rigorous pharmacopeial standards.
+            Headquartered in Maharashtra with operational and commercial hubs in Mumbai and Panvel, WellBee Pharmaceutical Private Limited develops research-backed, cGMP-validated pharmaceutical formulations across GP, CP, Gynae, and Paediatric therapeutic sectors.
           </p>
 
           <div className="hero-ctas">
             <a href="#products" className="btn btn--primary btn--lg">
-              Explore Formulations
+              Explore 10 Formulations
               <ArrowRight size={16} />
             </a>
             <a href="#contact" className="btn btn--outline btn--lg">
-              Partner / Business Enquiry
+              Partner / Trade Enquiry
             </a>
           </div>
 
           {/* Metric Strip */}
           <div className="hero-metrics">
             <div className="metric-item">
-              <span className="metric-number">{coreCount}+</span>
-              <span className="metric-label">Initial Core Formulations</span>
+              <span className="metric-number">{coreCount}</span>
+              <span className="metric-label">Top Formulations (GP, CP, Gyne, Paed)</span>
+            </div>
+            <div className="metric-item">
+              <span className="metric-number">Mumbai / Panvel</span>
+              <span className="metric-label">Maharashtra Corporate Hub</span>
             </div>
             <div className="metric-item">
               <span className="metric-number">100%</span>
               <span className="metric-label">Validated QA / QC Protocols</span>
             </div>
             <div className="metric-item">
-              <span className="metric-number">{verticalCount}+</span>
-              <span className="metric-label">Key Therapeutic Verticals</span>
-            </div>
-            <div className="metric-item">
               <span className="metric-number">cGMP</span>
-              <span className="metric-label">Compliant Contract Facilities</span>
+              <span className="metric-label">Schedule M Compliant Facilities</span>
             </div>
           </div>
         </motion.div>

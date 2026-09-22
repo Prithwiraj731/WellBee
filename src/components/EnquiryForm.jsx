@@ -107,10 +107,10 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Corporate Headquarters</strong>
+                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Maharashtra Corporate Hub</strong>
                   <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
                     WellBee Pharmaceutical Private Limited<br />
-                    Bandra Kurla Complex, Mumbai - 400051, India
+                    Corporate &amp; Distribution Operations: Mumbai / Panvel, Maharashtra, India
                   </p>
                 </div>
               </div>
@@ -120,9 +120,11 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Trade &amp; Stockist Desk</strong>
+                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Direct Trade &amp; Stockist Line</strong>
                   <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
-                    +91 (022) 6800-4000 / +91 (022) 6800-4001<br />
+                    <a href="tel:+918796913727" style={{ color: 'var(--color-brand-primary)', fontWeight: 700, textDecoration: 'none', fontSize: '14px' }}>
+                      +91 87969 13727
+                    </a><br />
                     Monday – Saturday, 9:30 AM – 6:30 PM IST
                   </p>
                 </div>
@@ -135,8 +137,8 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                 <div>
                   <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Official Desks</strong>
                   <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
-                    Trade: info@wellbeepharma.com<br />
-                    Regulatory: regulatory@wellbeepharma.com
+                    Trade: info@wellbeepharma.in<br />
+                    Regulatory: regulatory@wellbeepharma.in
                   </p>
                 </div>
               </div>

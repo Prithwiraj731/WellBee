@@ -71,8 +71,12 @@ export default function ProductModal({ product, onClose, onInquire }) {
                 <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-slate-900)' }}>{product.packType}</div>
               </div>
               <div>
-                <div style={{ fontSize: '11px', color: 'var(--color-slate-500)', fontWeight: 600 }}>TARGET SPECIALTY</div>
-                <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-slate-900)' }}>{product.specialty}</div>
+                <div style={{ fontSize: '11px', color: 'var(--color-slate-500)', fontWeight: 600 }}>DOCTOR SEGMENT</div>
+                <div style={{ fontSize: '13px', fontWeight: 700, color: 'var(--color-brand-primary)' }}>{product.targetAudience}</div>
+              </div>
+              <div style={{ gridColumn: 'span 2' }}>
+                <div style={{ fontSize: '11px', color: 'var(--color-slate-500)', fontWeight: 600 }}>TARGET SPECIALTIES</div>
+                <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--color-slate-800)' }}>{product.specialty}</div>
               </div>
             </div>
 

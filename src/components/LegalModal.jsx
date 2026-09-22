@@ -38,7 +38,7 @@ const legalContent = {
       <>
         <p><strong>Statutory Schedule H Warning:</strong> The pharmaceutical formulations listed are prescription drugs to be dispensed strictly against the written prescription of a Registered Medical Practitioner (RMP).</p>
         <p>Information on this website does not constitute self-medication recommendations. Patients must seek guidance from qualified healthcare specialists.</p>
-        <p><strong>Adverse Event Reporting:</strong> Suspected adverse drug reactions should be reported immediately to our Drug Safety Unit at <strong>pv@wellbeepharma.com</strong> or via our hotline 1800-400-WELL.</p>
+        <p><strong>Adverse Event Reporting:</strong> Suspected adverse drug reactions should be reported immediately to our Drug Safety Unit at <strong>wellbeepharmaceuticals@gmail.com</strong> or via our hotline 1800-400-WELL.</p>
       </>
     )
   }

@@ -89,9 +89,9 @@ export default function ProductCatalogue({
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
         >
-          <h2 className="section-title">Pharmaceutical Product Portfolio</h2>
+          <h2 className="section-title">Core Formulations for GP, CP, Gynae &amp; Paediatrics</h2>
           <p className="section-desc">
-            Explore our core commercial roster of 10 therapeutic formulations. Produced strictly in compliance with pharmacopeial specifications and Schedule M cGMP standards.
+            Top-10 essential prescription formulations engineered by WellBee Pharmaceutical (Maharashtra) adhering strictly to cGMP and pharmacopeial monographs.
           </p>
         </motion.div>
 
@@ -102,7 +102,7 @@ export default function ProductCatalogue({
             <input 
               type="text"
               className="search-input"
-              placeholder="Search by brand name, active composition, strength, or indication..."
+              placeholder="Search by brand name, active composition, GP/CP/Gyne/Paediatric, or indication..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               aria-label="Search pharmaceutical products"
@@ -140,7 +140,7 @@ export default function ProductCatalogue({
             <h3 style={{ fontSize: '17px', color: '#1E293B', marginBottom: '6px' }}>No matching formulation found</h3>
             <p style={{ color: '#64748B', fontSize: '13.5px', marginBottom: '16px' }}>Try searching by generic ingredient or select 'All Formulations'.</p>
             <button 
-              className="btn btn--outline btn--sm"
+              className="btn btn--primary btn--sm"
               onClick={() => {
                 setSearchQuery('');
                 onCategoryChange('all');
@@ -167,13 +167,19 @@ export default function ProductCatalogue({
                       <span className="tag-category">{product.categoryLabel}</span>
                       <span className="tag-dosage">{product.dosageForm}</span>
                     </div>
-                    <span className="status-chip">Rx ONLY</span>
+                    <span className="status-chip" style={{ background: '#EFF6FF', color: '#1A56DB', borderColor: '#BFDBFE', fontWeight: 600 }}>
+                      {product.targetAudience}
+                    </span>
                   </div>
 
                   <h3 className="product-card__title">{product.brandName}</h3>
                   <div className="product-card__generic">{product.genericName}</div>
 
                   <div className="product-card__details">
+                    <div className="detail-row">
+                      <span className="detail-row__label">Doctor Segment:</span>
+                      <span className="detail-row__value" style={{ fontWeight: 600, color: '#0F2347' }}>{product.targetAudience}</span>
+                    </div>
                     <div className="detail-row">
                       <span className="detail-row__label">Strength:</span>
                       <span className="detail-row__value">{product.strength}</span>
@@ -183,7 +189,7 @@ export default function ProductCatalogue({
                       <span className="detail-row__value">{product.packType}</span>
                     </div>
                     <div className="detail-row">
-                      <span className="detail-row__label">Specialty:</span>
+                      <span className="detail-row__label">Clinical Scope:</span>
                       <span className="detail-row__value">{product.specialty}</span>
                     </div>
                   </div>

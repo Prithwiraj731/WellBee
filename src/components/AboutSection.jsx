@@ -15,7 +15,7 @@ export default function AboutSection() {
         >
           <h2 className="section-title">Rooted in Science, Built for Patient Health</h2>
           <p className="section-desc">
-            Founded on the principle that healthcare practitioners and patients deserve uncompromised formulation consistency, transparent ethics, and dependable pharmaceutical supply.
+            Headquartered in Maharashtra with administrative and commercial hubs in Mumbai and Panvel, WellBee Pharmaceutical Private Limited delivers uncompromised formulation consistency, strict cGMP compliance, and dependable distribution for physicians and patients.
           </p>
         </motion.div>
 

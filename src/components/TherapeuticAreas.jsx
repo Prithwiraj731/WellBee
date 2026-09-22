@@ -7,42 +7,42 @@ const therapyAreas = [
     id: 'gastro',
     name: 'Gastroenterology',
     desc: 'Advanced proton pump inhibitors and prokinetic formulations addressing GERD, acid-peptic disorders, and gastric reflux.',
-    specialty: 'Specialty: Gastroenterologists, General Physicians',
+    specialty: 'Target Practice: GP, CP & Gastroenterology',
     icon: Activity
   },
   {
     id: 'respiratory',
     name: 'Respiratory & Pulmonology',
-    desc: 'Synergistic dual-action antihistamines, expectorants, and bronchodilators for asthma and chronic airway congestion.',
-    specialty: 'Specialty: Pulmonologists, ENT Specialists',
+    desc: 'Synergistic dual-action antihistamines, expectorants, and bronchodilators for asthma, wheeze, and airway congestion.',
+    specialty: 'Target Practice: GP, CP & Paediatric',
     icon: Wind
   },
   {
     id: 'ortho',
     name: 'Pain Management & Ortho',
     desc: 'Selective NSAIDs and analgesic combinations delivering rapid relief from musculoskeletal distress and arthritis pain.',
-    specialty: 'Specialty: Orthopaedic Surgeons, Rheumatologists',
+    specialty: 'Target Practice: GP, CP & Orthopaedics',
     icon: Shield
   },
   {
     id: 'nutrition',
     name: 'Neuro-Nutrition & Metabolic',
     desc: 'High-potency bioactive nerve nourishment compounds with Alpha Lipoic Acid and B-vitamins for neuropathy care.',
-    specialty: 'Specialty: Neurologists, Diabetologists',
+    specialty: 'Target Practice: GP, CP & Diabetology',
     icon: HeartPulse
   },
   {
     id: 'bone',
-    name: 'Bone Health & Endocrinology',
+    name: 'Bone Health & Gynaecology',
     desc: 'Therapeutic calcium-cholecalciferol combinations and high-dose Vitamin D3 formulations preserving bone mineral density.',
-    specialty: 'Specialty: Gynaecologists, Orthopaedicians',
+    specialty: 'Target Practice: GP, Gynae & Paediatric',
     icon: Sun
   },
   {
     id: 'paediatrics',
     name: 'Paediatrics & Hydration',
     desc: 'Child-safe calibrated oral drops, palatable suspensions, and WHO low-osmolarity oral rehydration formulas.',
-    specialty: 'Specialty: Paediatricians, Child Specialists',
+    specialty: 'Target Practice: Paediatrics & General Physicians',
     icon: Droplets
   }
 ];
@@ -66,7 +66,7 @@ export default function TherapeuticAreas({ onSelectCategory }) {
         >
           <h2 className="section-title">Specialized Therapeutic Divisions</h2>
           <p className="section-desc">
-            Focused pharmaceutical formulations engineered for high-frequency clinical segments across acute and chronic healthcare practice.
+            Essential pharmaceutical formulations engineered for high-frequency clinical prescribers across GP, CP, Gynae, and Paediatric healthcare sectors.
           </p>
         </motion.div>
 
