@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { API_BASE_URL } from '../config.js';
 
 export default function CareersModal({ position, onClose }) {
   const [name, setName] = useState('');
@@ -39,7 +40,7 @@ export default function CareersModal({ position, onClose }) {
     try {
       setLoading(true);
       setError(null);
-      const res = await fetch('/api/careers/apply', {
+      const res = await fetch(`${API_BASE_URL}/api/careers/apply`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ position, name, email, phone, experience, message })

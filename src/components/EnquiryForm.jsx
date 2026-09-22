@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, CheckCircle2, ShieldCheck, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { API_BASE_URL } from '../config.js';
 
 export default function EnquiryForm({ prefilledMessage, prefilledType }) {
   const [formData, setFormData] = useState({
@@ -48,7 +49,7 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
 
     try {
       setLoading(true);
-      const res = await fetch('/api/enquiries', {
+      const res = await fetch(`${API_BASE_URL}/api/enquiries`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

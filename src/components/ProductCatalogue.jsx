@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, X, ChevronRight, AlertCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { initialProducts } from '../../server/data/products.js';
+import { API_BASE_URL } from '../config.js';
 
 export default function ProductCatalogue({ 
   activeCategory, 
@@ -38,7 +39,7 @@ export default function ProductCatalogue({
           params.append('search', searchQuery);
         }
 
-        const res = await fetch(`/api/products?${params.toString()}`);
+        const res = await fetch(`${API_BASE_URL}/api/products?${params.toString()}`);
         if (res.ok) {
           const data = await res.json();
           if (isMounted) setProducts(data.products || []);
