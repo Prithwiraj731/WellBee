@@ -132,38 +132,38 @@ export default function Hero({ onSelectProduct }) {
             </a>
           </div>
 
-          {/* Modern Executive Trust Metrics Bar */}
-          <div className="hero-metrics-bar">
-            <div className="metric-pod">
-              <div className="metric-pod__top">
-                <FlaskConical size={15} className="metric-pod__icon-inline text-primary" />
-                <span className="metric-pod__value">{coreCount} Formulations</span>
+          {/* Modern Executive Bento Trust Grid */}
+          <div className="hero-metrics-bento">
+            <div className="bento-metric-cell">
+              <div className="bento-metric-top">
+                <FlaskConical size={16} className="bento-metric-icon" />
+                <span className="bento-metric-val">{coreCount} Formulations</span>
               </div>
-              <span className="metric-pod__label">GP, CP, Gynae &amp; Paediatrics</span>
+              <span className="bento-metric-sub">General Practice, Gynae &amp; Paediatrics</span>
             </div>
 
-            <div className="metric-pod">
-              <div className="metric-pod__top">
-                <MapPin size={15} className="metric-pod__icon-inline text-indigo" />
-                <span className="metric-pod__value">Panvel &amp; Mumbai</span>
+            <div className="bento-metric-cell">
+              <div className="bento-metric-top">
+                <MapPin size={16} className="bento-metric-icon" />
+                <span className="bento-metric-val">Panvel &amp; Mumbai</span>
               </div>
-              <span className="metric-pod__label">Maharashtra Operations Hub</span>
+              <span className="bento-metric-sub">Maharashtra Regional Operations Hub</span>
             </div>
 
-            <div className="metric-pod">
-              <div className="metric-pod__top">
-                <ShieldCheck size={15} className="metric-pod__icon-inline text-emerald" />
-                <span className="metric-pod__value">{qaCount}% cGMP Tested</span>
+            <div className="bento-metric-cell">
+              <div className="bento-metric-top">
+                <ShieldCheck size={16} className="bento-metric-icon" />
+                <span className="bento-metric-val">{qaCount}% cGMP Tested</span>
               </div>
-              <span className="metric-pod__label">Certified Batch Quality Assay</span>
+              <span className="bento-metric-sub">Certified Batch Quality Assay</span>
             </div>
 
-            <div className="metric-pod">
-              <div className="metric-pod__top">
-                <Award size={15} className="metric-pod__icon-inline text-amber" />
-                <span className="metric-pod__value">WHO-GMP</span>
+            <div className="bento-metric-cell">
+              <div className="bento-metric-top">
+                <Award size={16} className="bento-metric-icon" />
+                <span className="bento-metric-val">WHO-GMP Validated</span>
               </div>
-              <span className="metric-pod__label">Schedule M Compliance</span>
+              <span className="bento-metric-sub">Schedule M Regulatory Compliance</span>
             </div>
           </div>
         </motion.div>
