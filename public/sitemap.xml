@@ -6,7 +6,7 @@
   
   <!-- WellBee Corporate Portal Root -->
   <url>
-    <loc>https://www.wellbeepharma.com/</loc>
+    <loc>https://www.wellbeepharma.in/</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- About WellBee -->
   <url>
-    <loc>https://www.wellbeepharma.com/#about</loc>
+    <loc>https://www.wellbeepharma.in/#about</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -22,7 +22,7 @@
 
   <!-- Therapeutic Verticals -->
   <url>
-    <loc>https://www.wellbeepharma.com/#therapeutic-areas</loc>
+    <loc>https://www.wellbeepharma.in/#therapeutic-areas</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -30,7 +30,7 @@
 
   <!-- Formulation Portfolio & Catalogue -->
   <url>
-    <loc>https://www.wellbeepharma.com/#products</loc>
+    <loc>https://www.wellbeepharma.in/#products</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -38,7 +38,7 @@
 
   <!-- Quality Assurance & cGMP Compliance -->
   <url>
-    <loc>https://www.wellbeepharma.com/#quality</loc>
+    <loc>https://www.wellbeepharma.in/#quality</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -46,7 +46,7 @@
 
   <!-- Career Opportunities -->
   <url>
-    <loc>https://www.wellbeepharma.com/#careers</loc>
+    <loc>https://www.wellbeepharma.in/#careers</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -54,7 +54,7 @@
 
   <!-- Distributor & Trade Desk -->
   <url>
-    <loc>https://www.wellbeepharma.com/#contact</loc>
+    <loc>https://www.wellbeepharma.in/#contact</loc>
     <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
