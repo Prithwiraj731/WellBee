@@ -137,8 +137,10 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                 <div>
                   <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Official Desks</strong>
                   <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
-                    Trade: info@wellbeepharma.in<br />
-                    Regulatory: regulatory@wellbeepharma.in
+                    <a href="mailto:wellbeepharmaceuticals@gmail.com" style={{ color: 'var(--color-brand-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                      wellbeepharmaceuticals@gmail.com
+                    </a><br />
+                    Trade, Institutional &amp; Regulatory Correspondence
                   </p>
                 </div>
               </div>

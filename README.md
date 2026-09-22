@@ -305,7 +305,7 @@ docker run -p 5000:5000 -e PORT=5000 wellbee-pharma
 
 - **Schedule H Caution**: Formulations documented within this repository represent prescription pharmaceuticals under Indian Drugs and Cosmetics Rules. They may only be dispensed against a valid medical prescription from a registered medical practitioner.
 - **cGMP / Schedule M**: Manufacturing protocols reference revised Schedule M (Good Manufacturing Practices) and WHO-GMP guidelines.
-- **Direct Trade & Safety Line**: For distribution queries or to report an adverse event (AE), contact our desk at **`+91 87969 13727`** or email `info@wellbeepharma.in`.
+- **Direct Trade & Safety Line**: For distribution queries or to report an adverse event (AE), contact our desk at **`+91 87969 13727`** or email `wellbeepharmaceuticals@gmail.com`.
 
 ---
 
@@ -314,6 +314,7 @@ docker run -p 5000:5000 -e PORT=5000 wellbee-pharma
 - **Company Name**: WellBee Pharmaceutical Private Limited
 - **Headquarters**: Mumbai / Panvel, Maharashtra, India
 - **Phone**: `+91 87969 13727`
+- **Email**: `wellbeepharmaceuticals@gmail.com`
 - **CIN**: `U24239MH2024PTC490123` (Registered in Maharashtra)
 
 ---

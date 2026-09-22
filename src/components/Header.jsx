@@ -31,10 +31,10 @@ export default function Header({ onOpenLegal }) {
             </a>
           </div>
           <div className="top-bar__right">
-            <span className="top-bar__item">
+            <a href="mailto:wellbeepharmaceuticals@gmail.com" className="top-bar__item" style={{ textDecoration: 'none', color: 'inherit' }}>
               <Mail size={14} />
-              corporate@wellbeepharma.com
-            </span>
+              wellbeepharmaceuticals@gmail.com
+            </a>
             <button 
               onClick={() => onOpenLegal('disclaimer')} 
               className="top-bar__link"

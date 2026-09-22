@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhoneCall } from 'lucide-react';
+import { PhoneCall, Mail } from 'lucide-react';
 
 export default function Footer({ onOpenLegal, onSelectCategory }) {
   const currentYear = new Date().getFullYear();
@@ -71,11 +71,19 @@ export default function Footer({ onOpenLegal, onSelectCategory }) {
           <p style={{ fontSize: '12.5px', color: '#CBD5E1', lineHeight: 1.5, marginBottom: '12px' }}>
             To report an adverse reaction or product quality inquiry associated with any WellBee medicine, contact our vigilance unit immediately:
           </p>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.06)', padding: '8px 12px', borderRadius: '6px', color: '#60A5FA', fontSize: '12px', fontFamily: 'var(--font-mono)' }}>
-            <PhoneCall size={14} />
-            <a href="tel:+918796913727" style={{ color: 'inherit', textDecoration: 'none' }}>
-              +91 87969 13727 | Trade &amp; Safety Desk
-            </a>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: 'rgba(255,255,255,0.06)', padding: '10px 14px', borderRadius: '6px', color: '#60A5FA', fontSize: '12px', fontFamily: 'var(--font-mono)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <PhoneCall size={14} />
+              <a href="tel:+918796913727" style={{ color: 'inherit', textDecoration: 'none' }}>
+                +91 87969 13727 | Trade &amp; Safety
+              </a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <Mail size={14} />
+              <a href="mailto:wellbeepharmaceuticals@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                wellbeepharmaceuticals@gmail.com
+              </a>
+            </div>
           </div>
         </div>
       </div>
