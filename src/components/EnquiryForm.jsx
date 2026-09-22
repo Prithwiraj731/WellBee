@@ -91,13 +91,13 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
           {/* Left: Contact Info */}
           <motion.div 
             className="contact-info"
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
           >
             <h2 className="section-title">Distributor &amp; Trade Inquiries</h2>
-            <p className="section-desc" style={{ textAlign: 'left', marginLeft: 0 }}>
+            <p className="section-desc contact-intro-desc">
               Connect with our commercial division to explore exclusive regional distribution rights, institutional healthcare supply, or third-party manufacturing.
             </p>
 
@@ -107,8 +107,8 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                   <MapPin size={18} />
                 </div>
                 <div>
-                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Maharashtra Corporate Hub</strong>
-                  <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
+                  <strong className="contact-row-title">Maharashtra Corporate Hub</strong>
+                  <p className="contact-row-desc">
                     WellBee Pharmaceutical Private Limited<br />
                     Corporate &amp; Distribution Operations: Mumbai / Panvel, Maharashtra, India
                   </p>
@@ -120,9 +120,9 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                   <Phone size={18} />
                 </div>
                 <div>
-                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Direct Trade &amp; Stockist Line</strong>
-                  <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
-                    <a href="tel:+918796913727" style={{ color: 'var(--color-brand-primary)', fontWeight: 700, textDecoration: 'none', fontSize: '14px' }}>
+                  <strong className="contact-row-title">Direct Trade &amp; Stockist Line</strong>
+                  <p className="contact-row-desc">
+                    <a href="tel:+918796913727" className="contact-phone-link">
                       +91 87969 13727
                     </a><br />
                     Monday – Saturday, 9:30 AM – 6:30 PM IST
@@ -135,9 +135,9 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                   <Mail size={18} />
                 </div>
                 <div>
-                  <strong style={{ fontSize: '14px', color: 'var(--color-slate-900)' }}>Official Desks</strong>
-                  <p style={{ fontSize: '13px', color: 'var(--color-slate-600)', lineHeight: 1.4 }}>
-                    <a href="mailto:wellbeepharmaceuticals@gmail.com" style={{ color: 'var(--color-brand-primary)', textDecoration: 'none', fontWeight: 600 }}>
+                  <strong className="contact-row-title">Official Desks</strong>
+                  <p className="contact-row-desc">
+                    <a href="mailto:wellbeepharmaceuticals@gmail.com" className="contact-email-link">
                       wellbeepharmaceuticals@gmail.com
                     </a><br />
                     Trade, Institutional &amp; Regulatory Correspondence
@@ -146,8 +146,8 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
               </div>
             </div>
 
-            <div style={{ display: 'flex', gap: '8px', background: '#FFFBEB', border: '1px solid #FDE68A', padding: '10px 12px', borderRadius: '6px', fontSize: '11.5px', color: '#92400E' }}>
-              <ShieldCheck size={16} style={{ flexShrink: 0, marginTop: '1px' }} />
+            <div className="contact-warning-callout">
+              <ShieldCheck size={18} />
               <span>
                 Wholesale distribution applications require a valid Drug License (Form 20B/21B) and GST Registration.
               </span>
@@ -157,8 +157,8 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
           {/* Right: Form Card */}
           <motion.div 
             className="contact-form-card"
-            initial={{ opacity: 0, x: 16 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
           >
@@ -287,20 +287,21 @@ export default function EnquiryForm({ prefilledMessage, prefilledType }) {
                   {errors.message && <span className="field-error">{errors.message}</span>}
                 </div>
 
-                <div className="form-group" style={{ background: 'var(--color-slate-100)', padding: '10px 14px', borderRadius: '6px' }}>
-                  <label htmlFor="captchaAnswer" className="form-label" style={{ marginBottom: '4px' }}>
-                    Security Check: <strong>7 + 5 = ?</strong>
+                <div className="form-group captcha-group">
+                  <label htmlFor="captchaAnswer" className="form-label">
+                    Security Verification: <strong>7 + 5 = ?</strong>
                   </label>
-                  <input 
-                    type="number" 
-                    id="captchaAnswer" 
-                    name="captchaAnswer" 
-                    className="form-input" 
-                    style={{ maxWidth: '120px' }}
-                    placeholder="12"
-                    value={formData.captchaAnswer}
-                    onChange={handleChange}
-                  />
+                  <div className="captcha-input-wrap">
+                    <input 
+                      type="number" 
+                      id="captchaAnswer" 
+                      name="captchaAnswer" 
+                      className="form-input captcha-input" 
+                      placeholder="Answer"
+                      value={formData.captchaAnswer}
+                      onChange={handleChange}
+                    />
+                  </div>
                   {errors.captchaAnswer && <span className="field-error">{errors.captchaAnswer}</span>}
                 </div>
 
